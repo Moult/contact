@@ -2,9 +2,9 @@
 
 namespace spec\VLibrary\Core\Exception;
 
-use PHPSpec2\ObjectBehavior;
+use PhpSpec\ObjectBehavior;
 
-class Authorisation extends ObjectBehavior
+class AuthorisationSpec extends ObjectBehavior
 {
     function it_should_be_initializable()
     {

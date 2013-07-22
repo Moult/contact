@@ -2,9 +2,9 @@
 
 namespace spec\VLibrary\Core\Exception;
 
-use PHPSpec2\ObjectBehavior;
+use PhpSpec\ObjectBehavior;
 
-class Validation extends ObjectBehavior
+class ValidationSpec extends ObjectBehavior
 {
     function let()
     {
