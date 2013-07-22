@@ -4,7 +4,7 @@
  * Full license text in LICENSE file
  */
 
-namespace VLibrary\Core\Exception;
+namespace Contact\Core\Exception;
 
 class Validation extends \Exception
 {

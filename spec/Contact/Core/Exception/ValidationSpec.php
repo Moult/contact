@@ -1,6 +1,6 @@
 <?php
 
-namespace spec\VLibrary\Core\Exception;
+namespace spec\Contact\Core\Exception;
 
 use PhpSpec\ObjectBehavior;
 
@@ -13,7 +13,7 @@ class ValidationSpec extends ObjectBehavior
 
     function it_should_be_initializable()
     {
-        $this->shouldHaveType('VLibrary\Core\Exception\Validation');
+        $this->shouldHaveType('Contact\Core\Exception\Validation');
     }
 
     function it_is_an_exception()
