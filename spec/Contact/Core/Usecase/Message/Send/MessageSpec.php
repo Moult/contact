@@ -50,7 +50,7 @@ class MessageSpec extends ObjectBehavior
         ))->shouldBeCalled();
         $formatter->format('Email_Message_Send_Subject')->shouldBeCalled()->willReturn('email_subject');
         $formatter->format('Email_Message_Send_Body')->shouldBeCalled()->willReturn('email_body');
-        $emailer->set_from('sender_email')->shouldBeCalled();
+        $emailer->set_from(array('sender_email' => 'sender_name'))->shouldBeCalled();
         $emailer->set_subject('email_subject')->shouldBeCalled();
         $emailer->set_body('email_body')->shouldBeCalled();
         $emailer->send()->shouldBeCalled();

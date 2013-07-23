@@ -39,7 +39,7 @@ class Message extends Data\Message
             'sender_name' => $sender_name,
             'sender_email' => $sender_email
         ));
-        $this->emailer->set_from($sender_email);
+        $this->emailer->set_from(array($sender_email => $sender_name));
         $this->emailer->set_subject($this->formatter->format('Email_Message_Send_Subject'));
         $this->emailer->set_body($this->formatter->format('Email_Message_Send_Body'));
         $this->emailer->send();
