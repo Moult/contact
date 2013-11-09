@@ -1,4 +1,8 @@
 {
+    "name": "moult/contact",
+    "description": "System for sending messages to a recipient",
+    "keywords": ["contact", "message", "email"],
+    "license": "MIT",
     "config": {
         "bin-dir": "bin/"
     },
