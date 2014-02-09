@@ -27,9 +27,9 @@ class Message extends Data\Message
     public function validate()
     {
         $this->validator->setup(array('text' => $this->text));
-        $this->validator->rule('text', 'not_empty');
-        if ( ! $this->validator->check())
-            throw new Exception\Validation($this->validator->errors());
+        $this->validator->add_required_rule('text');
+        if ( ! $this->validator->is_valid())
+            throw new Exception\Validation($this->validator->get_error_keys());
     }
 
     public function send_from($sender_name, $sender_email)

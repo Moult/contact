@@ -34,12 +34,12 @@ class SenderSpec extends ObjectBehavior
             'name' => 'name',
             'email' => 'email'
         ))->shouldBeCalled();
-        $validator->rule('name', 'not_empty')->shouldBeCalled();
-        $validator->rule('email', 'not_empty')->shouldBeCalled();
-        $validator->rule('email', 'email')->shouldBeCalled();
-        $validator->rule('email', 'email_domain')->shouldBeCalled();
-        $validator->check()->shouldBeCalled()->willReturn(FALSE);
-        $validator->errors()->shouldBeCalled()->willReturn(array('name', 'email'));
+        $validator->add_required_rule('name')->shouldBeCalled();
+        $validator->add_required_rule('email')->shouldBeCalled();
+        $validator->add_email_rule('email')->shouldBeCalled();
+        $validator->add_email_domain_rule('email')->shouldBeCalled();
+        $validator->is_valid()->shouldBeCalled()->willReturn(FALSE);
+        $validator->get_error_keys()->shouldBeCalled()->willReturn(array('name', 'email'));
         $this->shouldThrow('Contact\Core\Exception\Validation')
             ->duringValidate();
     }

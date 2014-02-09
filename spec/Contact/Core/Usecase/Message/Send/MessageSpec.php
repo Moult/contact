@@ -34,9 +34,9 @@ class MessageSpec extends ObjectBehavior
         $validator->setup(array(
             'text' => 'text'
         ))->shouldBeCalled();
-        $validator->rule('text', 'not_empty')->shouldBeCalled();
-        $validator->check()->shouldBeCalled()->willReturn(FALSE);
-        $validator->errors()->shouldBeCalled()->willReturn(array('text'));
+        $validator->add_required_rule('text')->shouldBeCalled();
+        $validator->is_valid()->shouldBeCalled()->willReturn(FALSE);
+        $validator->get_error_keys()->shouldBeCalled()->willReturn(array('text'));
         $this->shouldThrow('Contact\Core\Exception\Validation')
             ->duringValidate();
     }

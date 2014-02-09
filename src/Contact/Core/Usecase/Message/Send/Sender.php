@@ -28,12 +28,12 @@ class Sender extends Data\Person
             'name' => $this->name,
             'email' => $this->email
         ));
-        $this->validator->rule('name', 'not_empty');
-        $this->validator->rule('email', 'not_empty');
-        $this->validator->rule('email', 'email');
-        $this->validator->rule('email', 'email_domain');
-        if ( ! $this->validator->check())
-            throw new Exception\Validation($this->validator->errors());
+        $this->validator->add_required_rule('name');
+        $this->validator->add_required_rule('email');
+        $this->validator->add_email_rule('email');
+        $this->validator->add_email_domain_rule('email');
+        if ( ! $this->validator->is_valid())
+            throw new Exception\Validation($this->validator->get_error_keys());
     }
 
     public function get_name()
